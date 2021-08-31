@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Josefinn Sans", sans-serif;
+}
+#wrapper {
+  width: calc(100% - 493px);
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  background: url("./../images/bg-pattern-desktop.svg") no-repeat,
+    linear-gradient(to bottom right, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+      no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+#wrapper::before {
+  content: "";
+  position: absolute;
+  width: 610px;
+  height: 100vh;
+  right: 0;
+
+  background: url("./../images/hero-desktop.jpg") no-repeat;
+  background-position: 100% 100%;
+  background-size: contain;
+}
+
+header {
+  width: 100%;
+  padding: 4em 11em;
+  margin-bottom: 2em;
+}
+main {
+  width: 100%;
+}
+section {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+h2 {
+  font-size: 3em;
+  letter-spacing: 0.3em;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.1em;
+
+  margin-bottom: 0.4em;
+}
+h2 span {
+  font-weight: 100;
+  color: hsl(0, 36%, 70%);
+}
+
+section p {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.75em;
+  color: hsl(0, 36%, 70%);
+}
+form {
+  margin-top: 2.5em;
+  width: 100%;
+}
+form fieldset {
+  border: none;
+}
+form #emailArea {
+  position: relative;
+  width: 100%;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 1em 2em;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  border: solid 1px hsl(0, 36%, 70%);
+  border-radius: 5em;
+  outline: none;
+}
+
+form label {
+  position: absolute;
+  top: 1.025em;
+  left: 0.25em;
+  padding-left: 1.5em;
+  pointer-events: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: hsl(0, 36%, 70%);
+  transition: 0.25s;
+}
+
+form input[type="text"]:focus ~ label,
+form input[type="text"]:valid ~ label {
+  background: #fff;
+  padding: 0 0.15em;
+  left: 1.5em;
+  transform: translateY(-20px);
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+form button[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  height: 3.5em;
+  width: 6em;
+  background: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border: none;
+  border-radius: 5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+form button[type="submit"]:hover {
+  background: hsl(0, 80%, 86%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 30px 5px,
+    hsl(0, 6%, 24%) 0px 8px 16px -8px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: 493px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+footer #socialBar {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer nav {
+  width: 100%;
+}
+
+footer nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+}
+footer nav ul a {
+  height: 50px;
+  width: 50px;
+  padding: 1em;
+  margin-right: 0.25em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: hsl(0, 68%, 83%);
+  border: solid ;
+  border-radius: 100%;
+
+  list-style: none;
+  transition: all ease-in-out 0.3s;
+}
+footer nav ul a:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+footer nav ul img {
+  width: 20px;
+}
+
+@media (max-width: 1200px) {
+  #wrapper {
+    width: calc(100% - 450px);
+  }
+  #wrapper::before {
+    width: 450px;
+
+    background: url("./../images/hero-desktop.jpg") no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+  header {
+    padding-left: 8em;
+  }
+  section {
+    width: 65%;
+  }
+}
+@media (min-width: 992px) {
+  header #banner {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  #wrapper {
+    width: 100%;
+    height: auto;
+  }
+  #wrapper::before {
+    display: none;
+  }
+  header {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-direction: column;
+  }
+  header #logo {
+    width: 100%;
+    padding: 2em 5em;
+  }
+  header #banner {
+    width: 100%;
+  }
+  header #banner img {
+    width: 100%;
+  }
+
+  main section {
+    width: 80%;
+    padding: 0 3em;
+    text-align: center;
+  }
+  main section h2 {
+    width: 50%;
+  }
+
+  main section form {
+    width: 50%;
+    margin-bottom: 4em;
+  }
+}
+
+@media (max-width: 600px) {
+  header #logo {
+    width: 100%;
+    padding: 2em 3em;
+  }
+  header #banner {
+    width: 100%;
+    height: 25em;
+  }
+
+  main section {
+    width: 100%;
+    padding: 0 2.5em;
+    text-align: center;
+  }
+
+  main section form {
+    width: 80%;
+  }
+}
