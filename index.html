@@ -14,60 +14,48 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
-  <script src="./assets/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
 <div id="wrapper">
-    <header>
-      <div id="logo">
-        <img src="./assets/images/logo.svg" alt="Base Apparel company logo">
-      </div>
-      <span id="banner"><img src="./assets/images/hero-mobile.jpg" alt="Base apparel model"></span>
-    </header>
-    
-    <main>
-      <section>
-        <h2><strong><span id="distinctColor">We're</span> coming soon</strong></h2>
-    
-        <p>
-          Hello fellow shoppers! We're currently building our new fashion store.
-          Add your email below to stay up-to-date with announcements and our launch deals.
-        </p>
-    
-        <form action="">
-          <fieldset>
-            <div id="emailArea">
-              <input type="text" required>
-              <Label for="email">Email address</Label>
-              <button type="submit"><img src="./assets/images/icon-arrow.svg" alt="arrow icon"></button>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-    </main>
+  <div class="screnn leftScrenn">
+      <header>
+        <div id="logo">
+          <img src="./assets/images/logo.svg" alt="Base Apparel company logo">
+        </div>
+      </header>
+      
+      <main>
+        <article>
+          <h2><strong><span id="distinctColor">We're</span> coming soon</strong></h2>
+      
+          <p>
+            Hello fellow shoppers! We're currently building our new fashion store.
+            Add your email below to stay up-to-date with announcements and our launch deals.
+          </p>
+      
+          <form action="" onsubmit="return(emailValidator())">
+            <fieldset>
+              <div id="emailArea">
+                <input type="email" required>
+                <Label for="email">Email address</Label>
+                <button type="submit"><img src="./assets/images/icon-arrow.svg" alt="arrow icon"></button>
+                <p class="alert"></p>
+              </div>
+            </fieldset>
+          </form>
+        </article>
+      </main>
+   </div>
+  <div class="screen rightScreen" id="banner"></div>
 </div>
   
-<footer>
-  <div id="socialBar">
-    <nav><ul>
-      
-        <li><a href=""><img id="fbIcon"src="./assets/images/facebook-f.svg" alt=""></a></li>
-
-      
-        <li><a href=""><img src="./assets/images/github-alt.svg" alt=""></a></li>
-      
-        <li><a href=""><img src="./assets/images/linkedin-in.svg" alt=""></a></li>
-      
-        <li><a href=""><img src="./assets/images/twitter.svg" alt=""></a></li>
-    </ul></nav>
-  </div>
-  
+<footer>  
   <p class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </p>
 </footer>
-<script src="./assets/js/RegEx.js"></script>
+<script src="assets/js/validator.js"></script>
 </body>
 </html>
